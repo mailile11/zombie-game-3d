@@ -959,7 +959,7 @@
         }
 
         function switchWeapon() {
-            if (wave < 5) return;
+            if (wave > 4) return;
             player.currentWeapon = player.currentWeapon === "sword" ? "gun" : "sword";
             swordGroup.visible = player.currentWeapon === "sword";
             gunGroup.visible = player.currentWeapon === "gun";
