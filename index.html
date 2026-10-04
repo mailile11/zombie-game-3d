@@ -913,7 +913,7 @@
                     checkZombieDeath(targetZombie);
                 });
             } else if (player.currentWeapon === "gun") {
-                const isRapid = wave >= 15;
+                const isRapid = wave >= 10;
                 player.attackCooldown = isRapid ? 0.12 : 0.3;
                 sound.playGunshot(isRapid);
 
@@ -959,7 +959,7 @@
         }
 
         function switchWeapon() {
-            if (wave > 4) return;
+            if (wave < 4) return;
             player.currentWeapon = player.currentWeapon === "sword" ? "gun" : "sword";
             swordGroup.visible = player.currentWeapon === "sword";
             gunGroup.visible = player.currentWeapon === "gun";
